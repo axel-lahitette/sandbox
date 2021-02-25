@@ -10,27 +10,27 @@ Created on Wed Feb 24 15:55:25 2021
 Return the number of the person using the name provided as argument
 """
 def get(name):
-    monFichier = open('fichier.txt','r')
-    for ligne in monFichier:
+    myFile = open('contacts.txt','r')
+    for ligne in myFile:
         if name in ligne:
             number = ligne
             print(ligne)
             break
-    monFichier.close()
+    myFile.close()
     return number
 
 """
 Insert the contact of the person using the name and number provided as arguments
 """
 def put(name, number):
-    monFichier = open('fichier.txt','a')
-    monFichier.write("Le numéro : ")
-    monFichier.write(number)
-    monFichier.write("\t")
-    monFichier.write("Nom : ")
-    monFichier.write(name)
-    monFichier.write("\n")
-    monFichier.close()
+    myFile = open('contacts.txt','a')
+    myFile.write("Number : ")
+    myFile.write(number)
+    myFile.write("\t")
+    myFile.write("Name : ")
+    myFile.write(name)
+    myFile.write("\n")
+    myFile.close()
 
 """
 Delete the contact of the person with the name provided as argument

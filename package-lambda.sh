@@ -1,0 +1,2 @@
+# aws cloudformation package --template ./lambda-cf.yml --s3-bucket mybucket --output yaml --profile gl-gekko  > packaged-lambda-template.yml
+aws-vault exec gl-gekko -- aws cloudformation package --template ./lambda-cf.yml --s3-bucket mybucket --output yaml > packaged-lambda-template.yml
