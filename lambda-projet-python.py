@@ -7,28 +7,36 @@ Created on Wed Feb 24 15:55:25 2021
 """
 
 """
-Return the number of the person with the name provided as argument
+Return the number of the person using the name provided as argument
 """
 def get(name):
-
-
-
-
+    monFichier = open('fichier.txt','r')
+    for ligne in monFichier:
+        if name in ligne:
+            number = ligne
+            print(ligne)
+            break
+    monFichier.close()
     return number
 
-
 """
-Insert the contact of the person with the name provided as argument
+Insert the contact of the person using the name and number provided as arguments
 """
 def put(name, number):
-
+    monFichier = open('fichier.txt','a')
+    monFichier.write("Le numéro : ")
+    monFichier.write(number)
+    monFichier.write("\t")
+    monFichier.write("Nom : ")
+    monFichier.write(name)
+    monFichier.write("\n")
+    monFichier.close()
 
 """
 Delete the contact of the person with the name provided as argument
 """
 def delete(name):
-
-
+    return
 
 def main():
     exemple_nom = "Guillaume"
@@ -63,11 +71,12 @@ if __name__ == "__main__":
 #         MENU=int(input("Saisir 1 pour entrer un nouveau contact, 2 pour effectuer une recherche et 0 pour quitter"))
 #
 #     if MENU==2:
-#         recherche=input("Entrer le nom du contact")
-#         monFichier=open('fichier.txt','a')
-#         monFichier.write(recherche)
-#         monFichier.write("\n")
-#         monFichier.close()
+#         monFichier=open('fichier.txt','r')
+        # for ligne in monFichier:
+        #     if recherche in ligne:
+        #         print(ligne)
+        #         break
+        # monFichier.close()
 #         print(numero)
 #         MENU=int(input("Saisir 1 pour entrer un nouveau contact, 2 pour effectuer une recherche et 0 pour quitter"))
 #
