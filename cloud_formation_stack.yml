@@ -55,7 +55,7 @@ Resources:
         Type: AWS_PROXY
         Uri: !Sub
           - arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${lambdaArn}/invocations
-          - lambdaArn: !GetAtt lambdaFunction.Arn
+          - lambdaArn: !GetAtt lambdaGetFunction.Arn
       ResourceId: !GetAtt apiGateway.RootResourceId
       RestApiId: !Ref apiGateway
 
