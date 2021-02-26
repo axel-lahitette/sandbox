@@ -12,6 +12,9 @@ Parameters:
   apiGatewayHTTPMethod:
     Type: String
     Default: POST
+  apiGatewayHTTPGetMethod:
+    Type: String
+    Default: GET
   lambdaFunctionName:
     Type: String
     AllowedPattern: "[a-zA-Z0-9]+[a-zA-Z0-9-]+[a-zA-Z0-9]+"
@@ -49,7 +52,7 @@ Resources:
     Type: AWS::ApiGateway::Method
     Properties:
       AuthorizationType: NONE
-      HttpMethod: !Ref apiGatewayHTTPMethod
+      HttpMethod: !Ref apiGatewayHTTPGetMethod
       Integration:
         IntegrationHttpMethod: GET
         Type: AWS_PROXY
